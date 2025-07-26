@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "fakesim_lib",
+    srcs = ["main.go"],
+    importpath = "ipvive/bridgebot/inference_pipe/fakesim",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//bridgebot/pb",
+        "@org_golang_google_grpc//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "fakesim",
+    embed = [":fakesim_lib"],
+    visibility = ["//visibility:public"],
+)

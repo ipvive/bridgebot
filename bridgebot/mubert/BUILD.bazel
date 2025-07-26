@@ -1,0 +1,12 @@
+py_library(
+    name = "mubert",
+    srcs = [
+        "modeling.py",
+        "modeling_test.py",
+        "mubert.py",
+        "optimization.py",
+        "optimization_test.py",
+        "toptokens.py",
+    ],
+    visibility = ["//visibility:public"],
+)

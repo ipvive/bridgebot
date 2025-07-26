@@ -1,0 +1,18 @@
+load("@rules_python//python:defs.bzl", "py_library")
+load("@pip_deps//:requirements.bzl", "requirement")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+py_library(
+	name = "fastgame",
+	srcs = [
+		"wrapper.py",
+		"__init__.py",
+	],
+	deps = [
+		"//bridgebot/pb:alphabridge_python_proto",
+		requirement("numpy"),
+	],
+)

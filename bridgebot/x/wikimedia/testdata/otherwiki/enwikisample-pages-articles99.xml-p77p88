@@ -1,0 +1,386 @@
+xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xm
+l:lang="en">
+  <siteinfo>
+    <sitename>Wikipedia</sitename>
+    <dbname>enwiki</dbname>
+    <base>https://en.wikipedia.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.31.0-wmf.4</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Wikipedia</namespace>
+      <namespace key="5" case="first-letter">Wikipedia talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="100" case="first-letter">Portal</namespace>
+      <namespace key="101" case="first-letter">Portal talk</namespace>
+      <namespace key="108" case="first-letter">Book</namespace>
+      <namespace key="109" case="first-letter">Book talk</namespace>
+      <namespace key="118" case="first-letter">Draft</namespace>
+      <namespace key="119" case="first-letter">Draft talk</namespace>
+      <namespace key="446" case="first-letter">Education Program</namespace>
+      <namespace key="447" case="first-letter">Education Program talk</namespace
+>
+      <namespace key="710" case="first-letter">TimedText</namespace>
+      <namespace key="711" case="first-letter">TimedText talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namesp
+ace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Wikipedia:WikiProject Spam/LinkReports/ikariam.wt8.ru</title>
+    <ns>4</ns>
+    <id>23927984</id>
+    <revision>
+      <id>328475093</id>
+      <parentid>328218692</parentid>
+      <timestamp>2009-11-28T23:43:08Z</timestamp>
+      <contributor>
+        <username>COIBot</username>
+        <id>4048622</id>
+      </contributor>
+      <comment>XWiki spam by 188.162.21.47 94.25.166.171 94.25.138.6 188.162.16.
+172 94.25.163.103 109.188.40.148 80.67.241.158 on ikariam.wt8.ru - 0 reports</co
+mment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{User:COIBot/Summary/LinkReports}}
+Reporting statistics of link ikariam.wt8.ru; 0 records.
+* {{LinkSummary|ikariam.wt8.ru}}.
+* ikariam.wt8.ru resolves to [http://82.146.43.181 82.146.43.181] - {{LinkSummar
+y|82.146.43.181}}.
+* Link is not on the [[en:User:COIBot#Blacklist|blacklist]].
+
+Reports
+COIBot reported 0 links.
+----
+Below a full report on all use of the link ikariam.wt8.ru.
+
+This list is intended to see how the [[:en:WP:EL|external link]] gets used, it d
+oes '''not''' imply that involved accounts are having a [[:en:WP:COI|conflict of
+ interest]] in adding the link, or that the involved accounts are [[:en:WP:SPAM|
+spamming]] the link.
+
+LinkWatcher records:
+
+# 2009-08-03 15:09:53 (UTC): User [[:w:ru:User:94.25.163.103|w:ru:94.25.163.103]
+] ([[:w:ru:User talk:94.25.163.103|talk]] - [[:w:ru:Special:Contributions/94.25.
+163.103|contribs]]; 1) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.ph
+p?diff=17503042&amp;oldid=17497884&amp;rcid=18007083 diff] - [http://ru.wikipedi
+a.org/w/index.php?diff=17503042&amp;action=edit&amp;undoafter=17497884&amp;undo=
+17503042 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 29297612--&gt;&lt;br/&gt;* Link
+s added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (1, 13, 1, 1) 
+# 2009-08-09 16:20:29 (UTC): User [[:w:ru:User:94.25.138.6|w:ru:94.25.138.6]] ([
+[:w:ru:User talk:94.25.138.6|talk]] - [[:w:ru:Special:Contributions/94.25.138.6|
+contribs]]; 3) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.php?diff=1
+7636035&amp;oldid=17585964&amp;rcid=18143325 diff] - [http://ru.wikipedia.org/w/
+index.php?diff=17636035&amp;action=edit&amp;undoafter=17585964&amp;undo=17636035
+ undo]) - Link: ikariam.wt8.ru.&lt;!--ID 29556897--&gt;&lt;br/&gt;* Links added 
+in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (3, 13, 3, 1) 
+# 2009-08-09 18:13:24 (UTC): User [[:w:ru:User:94.25.138.6|w:ru:94.25.138.6]] ([
+[:w:ru:User talk:94.25.138.6|talk]] - [[:w:ru:Special:Contributions/94.25.138.6|
+contribs]]; 3) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.php?diff=1
+7638401&amp;oldid=17637627&amp;rcid=18145700 diff] - [http://ru.wikipedia.org/w/
+index.php?diff=17638401&amp;action=edit&amp;undoafter=17637627&amp;undo=17638401
+ undo]) - Link: ikariam.wt8.ru.&lt;!--ID 29556899--&gt;&lt;br/&gt;* Links added 
+in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (3, 13, 3, 1) 
+# 2009-08-09 19:30:11 (UTC): User [[:w:ru:User:94.25.138.6|w:ru:94.25.138.6]] ([
+[:w:ru:User talk:94.25.138.6|talk]] - [[:w:ru:Special:Contributions/94.25.138.6|
+contribs]]; 3) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.php?diff=1
+7639885&amp;oldid=17638776&amp;rcid=18147218 diff] - [http://ru.wikipedia.org/w/
+index.php?diff=17639885&amp;action=edit&amp;undoafter=17638776&amp;undo=17639885
+ undo]) - Link: ikariam.wt8.ru.&lt;!--ID 29556898--&gt;&lt;br/&gt;* Links added 
+in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (3, 13, 3, 1) 
+# 2009-08-10 09:44:54 (UTC): User [[:w:ru:User:188.162.16.172|w:ru:188.162.16.17
+2]] ([[:w:ru:User talk:188.162.16.172|talk]] - [[:w:ru:Special:Contributions/188
+.162.16.172|contribs]]; 1) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/inde
+x.php?diff=17649430&amp;oldid=17640735&amp;rcid=18156958 diff] - [http://ru.wiki
+pedia.org/w/index.php?diff=17649430&amp;action=edit&amp;undoafter=17640735&amp;u
+ndo=17649430 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 29486143--&gt;&lt;br/&gt;* 
+Links added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (1, 13, 1,
+ 1) 
+# 2009-08-25 22:08:28 (UTC): User [[:w:ru:User:94.25.166.171|w:ru:94.25.166.171]
+] ([[:w:ru:User talk:94.25.166.171|talk]] - [[:w:ru:Special:Contributions/94.25.
+166.171|contribs]]; 1) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.ph
+p?diff=18011527&amp;oldid=17984825&amp;rcid=18531471 diff] - [http://ru.wikipedi
+a.org/w/index.php?diff=18011527&amp;action=edit&amp;undoafter=17984825&amp;undo=
+18011527 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 30795710--&gt;&lt;br/&gt;* Link
+s added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (1, 13, 1, 1) 
+# 2009-09-17 04:36:35 (UTC): User [[:w:ru:User:188.162.21.47|w:ru:188.162.21.47]
+] ([[:w:ru:User talk:188.162.21.47|talk]] - [[:w:ru:Special:Contributions/188.16
+2.21.47|contribs]]; 1) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.ph
+p?diff=18503298&amp;oldid=18365556&amp;rcid=19040473 diff] - [http://ru.wikipedi
+a.org/w/index.php?diff=18503298&amp;action=edit&amp;undoafter=18365556&amp;undo=
+18503298 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 32007817--&gt;&lt;br/&gt;* Link
+s added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (1, 13, 1, 1) 
+# 2009-10-30 08:12:52 (UTC): User [[:w:ru:User:80.67.241.158|w:ru:80.67.241.158]
+] ([[:w:ru:User talk:80.67.241.158|talk]] - [[:w:ru:Special:Contributions/80.67.
+241.158|contribs]]; 46) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.p
+hp?diff=19498647&amp;oldid=19451987&amp;rcid=20069221 diff] - [http://ru.wikiped
+ia.org/w/index.php?diff=19498647&amp;action=edit&amp;undoafter=19451987&amp;undo
+=19498647 undo]) - Link: www.ikariam.wt8.ru.&lt;!--ID 417409--&gt;&lt;br/&gt;* L
+inks added in this diff: &lt;nowiki&gt;www.ikariam.wt8.ru&lt;/nowiki&gt; (46, 13
+, 4, 2) 
+# 2009-11-24 08:44:19 (UTC): User [[:w:ru:User:80.67.241.158|w:ru:80.67.241.158]
+] ([[:w:ru:User talk:80.67.241.158|talk]] - [[:w:ru:Special:Contributions/80.67.
+241.158|contribs]]; 46) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.p
+hp?diff=20122019&amp;oldid=20122008&amp;rcid=20710242 diff] - [http://ru.wikiped
+ia.org/w/index.php?diff=20122019&amp;action=edit&amp;undoafter=20122008&amp;undo
+=20122019 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 1577982--&gt;&lt;br/&gt;* Link
+s added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (46, 13, 4, 2)
+ 
+# 2009-11-26 13:20:50 (UTC): User [[User:80.67.241.158|80.67.241.158]] ([[User t
+alk:80.67.241.158|talk]] - [[Special:Contributions/80.67.241.158|contribs]]; 46)
+ to [[Ikariam]] ([http://en.wikipedia.org/w/index.php?diff=328038098&amp;oldid=3
+25033049 diff] - [http://en.wikipedia.org/w/index.php?diff=328038098&amp;action=
+edit&amp;undoafter=325033049&amp;undo=328038098 undo]) - Link: www.ikariam.wt8.r
+u.&lt;!--ID 1700676--&gt;&lt;br/&gt;* Links added in this diff: &lt;nowiki&gt;ww
+w.ikariam.wt8.ru&lt;/nowiki&gt; (46, 13, 4, 2) 
+# 2009-11-27 14:58:48 (UTC): User [[:w:ru:User:80.67.241.158|w:ru:80.67.241.158]
+] ([[:w:ru:User talk:80.67.241.158|talk]] - [[:w:ru:Special:Contributions/80.67.
+241.158|contribs]]; 46) to [[:w:ru:Икариам]] ([http://ru.wikipedia.org/w/index.p
+hp?diff=20201312&amp;oldid=20195807&amp;rcid=20791969 diff] - [http://ru.wikiped
+ia.org/w/index.php?diff=20201312&amp;action=edit&amp;undoafter=20195807&amp;undo
+=20201312 undo]) - Link: www.ikariam.wt8.ru.&lt;!--ID 1754475--&gt;&lt;br/&gt;* 
+Links added in this diff: &lt;nowiki&gt;www.ikariam.wt8.ru&lt;/nowiki&gt; (46, 1
+3, 4, 2) 
+# 2009-11-28 22:45:12 (UTC): User [[:w:ru:User:109.188.40.148|w:ru:109.188.40.14
+8]] ([[:w:ru:User talk:109.188.40.148|talk]] - [[:w:ru:Special:Contributions/109
+.188.40.148|contribs]]; 2) to [[:w:ru:Танки Онлайн]] ([http://ru.wikipedia.org/w
+/index.php?diff=20236088&amp;oldid=20015811&amp;rcid=20827585 diff] - [http://ru
+.wikipedia.org/w/index.php?diff=20236088&amp;action=edit&amp;undoafter=20015811&
+amp;undo=20236088 undo]) - Link: ikariam.wt8.ru.&lt;!--ID 1828203--&gt;&lt;br/&g
+t;* Links added in this diff: &lt;nowiki&gt;ikariam.wt8.ru&lt;/nowiki&gt; (2, 13
+, 2, 1) 
+# 2009-11-28 22:46:04 (UTC): User [[:w:ru:User:109.188.40.148|w:ru:109.188.40.14
+8]] ([[:w:ru:User talk:109.188.40.148|talk]] - [[:w:ru:Special:Contributions/109
+.188.40.148|contribs]]; 2) to [[:w:ru:GanjaWars]] ([http://ru.wikipedia.org/w/in
+dex.php?diff=20236105&amp;oldid=19981833&amp;rcid=20827600 diff] - [http://ru.wi
+kipedia.org/w/index.php?diff=20236105&amp;action=edit&amp;undoafter=19981833&amp
+;undo=20236105 undo]) - Link: www.ikariam.wt8.ru.&lt;!--ID 1828220--&gt;&lt;br/&
+gt;* Links added in this diff: &lt;nowiki&gt;www.ikariam.wt8.ru&lt;/nowiki&gt; (
+2, 13, 2, 1) 
+&lt;!-- tags: --&gt;{{NOINDEX}}</text>
+      <sha1>f0vhjllsh5ytckuicuhjkpsr94jioie</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Gifts &amp; Messages</title>
+    <ns>0</ns>
+    <id>23927985</id>
+    <revision>
+      <id>773847766</id>
+      <parentid>663956493</parentid>
+      <timestamp>2017-04-04T19:35:26Z</timestamp>
+      <contributor>
+        <username>Starcheerspeaksnewslostwars</username>
+        <id>11554556</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Infobox album &lt;!-- See Wikipedia:WikiProje
+ct_Albums --&gt;
+| Name        = Gifts &amp; Messages
+| Type        = Album
+| Artist      = [[Rahsaan Roland Kirk|Roland Kirk]]
+| Cover       = Gifts &amp; Messages.jpg
+| Released    = 1964
+| Recorded    = July 22, 1964
+| Genre       = [[Jazz]]
+| Length      = 
+| Label       = [[Mercury Records|Mercury]]
+| Producer    =
+| Last album  = ''[[Kirk in Copenhagen]]''&lt;br/&gt;(1964)
+| This album  = '''''Gifts &amp; Messages'''''&lt;br/&gt;(1964)
+| Next album  = ''[[I Talk with the Spirits]]''&lt;br/&gt;(1964)
+}}
+{{Album reviews
+|rev2 = ''[[The Rolling Stone Jazz Record Guide]]''
+| rev2Score = {{rating|2|5}}&lt;ref name=RSJRG&gt; {{Cite book
+ | last = Swenson
+ | first = J.  (Editor)
+ | author-link = 
+ | year = 1985
+ | title = The Rolling Stone Jazz Record Guide
+ | publisher = Random House/Rolling Stone
+ | location = USA
+ | isbn = 0-394-72643-X
+ | pages = 119
+}}&lt;/ref&gt;
+}}
+'''''Gifts &amp; Messages''''' is an album by jazz multi-instrumentalist [[Rahsa
+an Roland Kirk|Roland Kirk]]. It was originally released on the [[Mercury Record
+s|Mercury]] label in 1964 and features performances by Kirk with [[Horace Parlan
+]], [[Michael Fleming]], and [[Steve Ellington]].&lt;ref name=&quot;Kirk disco&q
+uot;&gt;[http://www.jazzdisco.org/roland-kirk/catalog/#mercury-mg-20939 Rahsaan 
+Roland Kirk discography] accessed 9 August 2009&lt;/ref&gt;
+
+==Track listing==
+''All compositions by Roland Kirk except where noted.
+# &quot;The Things I Love&quot; ([[Lew Harris]], [[Harold Barlow (songwriter)|Ha
+rold Barlow]]) - 3:12
+# &quot;Petite Fleur&quot; ([[Sidney Bechet]]) - 3:10
+# &quot;March On, Swan Lake&quot; ([[Pyotr Ilyich Tchaikovsky]] arranged by Rola
+nd Kirk) - 3:57
+# &quot;Tears Sent By You&quot; (Michael Fleming) - 5:59
+# &quot;My Heart At Thy Sweet Voice&quot; ([[Camille Saint-Saëns]] arranged by R
+oland Kirk) - 3:21
+# &quot;Gifts And Messages&quot; - 4:06
+# &quot;Hip Chops&quot; - 3:33
+# &quot;Blues For C &amp; T&quot; - 3:06
+# &quot;Where Does The Blame Lie&quot; - 2:49
+# &quot;Vertigo Ro&quot; - 4:07
+:*Recorded in Los Angeles, CA on July 22, 1964
+
+==Personnel==
+*[[Roland Kirk]]: [[tenor saxophone]], [[manzello]], [[Stritch (saxophone)|strit
+ch]], [[flute]], [[Siren (noisemaker)|siren]]
+*[[Horace Parlan]]: [[piano]]
+*[[Michael Fleming]]: [[double bass|bass]]
+*[[Steve Ellington]]: [[drum kit|drums]]
+
+==References==
+{{Reflist}}
+
+{{DEFAULTSORT:Gifts and Messages}}
+[[Category:1964 albums]]
+[[Category:Mercury Records albums]]
+[[Category:Rahsaan Roland Kirk albums]]</text>
+      <sha1>l32fhrfx9dem0ldu4ch8xi57ekhfslz</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Multi scale analysis</title>
+    <ns>0</ns>
+    <id>23927986</id>
+    <redirect title="Multiple-scale analysis" />
+    <revision>
+      <id>307138054</id>
+      <timestamp>2009-08-10T10:17:17Z</timestamp>
+      <contributor>
+        <username>Crowsnest</username>
+        <id>6054452</id>
+      </contributor>
+      <comment>redirect to [[Multiple-scale analysis]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">#REDIRECT [[Multiple-scale analysis]]</text>
+      <sha1>rtrloe3qd4sp5vs42qj512mgbamtdgt</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:LuckyDogcover.gif</title>
+    <ns>6</ns>
+    <id>23927988</id>
+    <revision>
+      <id>751817501</id>
+      <parentid>599317318</parentid>
+      <timestamp>2016-11-28T00:24:03Z</timestamp>
+      <contributor>
+        <username>TAnthony</username>
+        <id>1808194</id>
+      </contributor>
+      <comment>/* Licensing: */Embed image category in {{Non-free book cover}}, 
+and cleanup using [[Project:AWB|AWB]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== Summary ==
+{{Non-free use rationale
+ |Article           = Lucky Dog
+ |Description       = 
+ |Source            = personal database
+ |Portion           = 
+ |Low_resolution    = 
+ |Purpose           = for the article Lucky Dog play
+ |Replaceability    = 
+ |other_information = 
+}}
+
+== Licensing: ==
+{{Non-free book cover|image has rationale=yes|category=Book cover images of play
+s}}</text>
+      <sha1>ncygrf3adzt1eilhtyj5lvq65jil5w7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>African Leaders State of Africa Report</title>
+    <ns>0</ns>
+    <id>23927992</id>
+    <revision>
+      <id>747977209</id>
+      <parentid>532053151</parentid>
+      <timestamp>2016-11-05T15:55:43Z</timestamp>
+      <contributor>
+        <username>Bender the Bot</username>
+        <id>28903366</id>
+      </contributor>
+      <minor />
+      <comment>/* top */clean up; http&amp;rarr;https for [[Google Books]] using
+ [[Project:AWB|AWB]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Notability|Products|date=December 2009}}
+{{italic title}}
+{{Infobox Magazine
+| cover =
+| category   = [[Africa]]
+| website      = {{URL|http://www.bu.edu/aparc/report/}}
+| link1        =
+| link1-name   =
+| publisher    = [[African Presidential Archives and Research Center]], [[Boston
+ University]]
+| country      = [[United States]]
+| history      =
+| frequency    = Annual
+| issn = 
+| OCLC         = 53326233
+}}
+The '''''African Leaders' State of Africa Report''''' offers a commentary on pol
+itics and policies from the perspective of the individuals shaping those trends.
+&lt;ref name=&quot;Emory&quot;&gt;{{cite web|url=http://guides.main.library.emor
+y.edu/content.php?pid=69205&amp;sid=511930|title=Materials to support students i
+n AAS485/History 488: Transnational Black Leadership|publisher=Emory University 
+Libraries|accessdate=29 December 2009|location=[[Atlanta]], [[Georgia (U.S. stat
+e)|Georgia]]}}&lt;/ref&gt;&lt;ref name=&quot;Jet&quot;&gt;{{cite journal|date=20
+03-05-12|title=Planning for a better Africa|journal=Jet|publisher=[[Johnson Publ
+ishing Company]]|volume=103|issue=20|pages=20|issn=0021-5996|url=https://books.g
+oogle.com/books?id=3bUDAAAAMBAJ&amp;pg=PA20&amp;lpg=PA20&amp;dq=%22Annual+Africa
+n+Leaders%27+State+of+Africa+Report%22&amp;source=bl&amp;ots=K4MHwxh-xC&amp;sig=
+urUjw2dnvKbneGRxCJ-Eh3t2FxE&amp;hl=en&amp;ei=d4U6S5uKPMKfjAfj-PWmDg&amp;sa=X&amp
+;oi=book_result&amp;ct=result&amp;resnum=8&amp;ved=0CBYQ6AEwBzgK#v=onepage&amp;q
+=%22Annual%20African%20Leaders%27%20State%20of%20Africa%20Report%22&amp;f=false}
+}&lt;/ref&gt;
+
+==References==
+{{reflist}}
+
+[[Category:Publications with year of establishment missing]]
+[[Category:International relations]]
+[[Category:Politics of Africa]]
+[[Category:Boston University]]
+
+
+{{Africa-stub}}</text>
+      <sha1>t7oo0acwzbu5cim00f7kknvdvr55eh3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gifts &amp; Messages.jpg</title>

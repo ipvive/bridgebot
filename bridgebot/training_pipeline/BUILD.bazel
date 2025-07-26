@@ -1,0 +1,12 @@
+py_library(
+    name = "training_pipeline",
+    srcs = [
+	"training_pipeline.py",
+	"__init__.py",
+    ],
+    deps = [
+        "//bridgebot/bridge:lin",
+	"//bridgebot/jargon/bert:bert",
+    ],
+    visibility = ["//visibility:public"],
+)

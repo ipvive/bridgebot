@@ -1,0 +1,11 @@
+load("@io_bazel_rules_docker//python3:image.bzl", "py3_image")
+load("@bridgebot_py_deps//:requirements.bzl", "requirement")
+
+py3_image(
+    name = "keep_models",
+    srcs = ["keep_models.py"],
+    deps = [
+        requirement("gsutil"),
+    ],
+    visibility = ["//visibility:public"],
+)

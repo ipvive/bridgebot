@@ -1,0 +1,128 @@
+load("pymodule.py", ["pyentity", TODO]
+
+pyentity(
+    name = "1card",
+    deps = ["ncard.game"],
+    init = "ncard.game.NCard(n=1)",
+)
+
+# TODO: remove following unused code after 1card feature complete
+alias(
+    subject = "1card",
+    bind = [
+        "setup",
+        "bidding",
+        "card play",
+        "trick",
+        "scoring",
+    ],
+)
+
+axiom(
+    name = "seat symmetry",
+    statement = "The game is symmetric with respect to seat rotation."
+)
+
+axiom(
+    name = "trick dependencies",
+    statement = "The winner of each trick is depends only on contract strain and cards played to that trick.",
+)
+
+axiom(
+    name = "suit symmetry",
+    statement = "Card play is symmetric with respect to suit permutation.",
+    deps = ["trick dependencies"],
+)
+
+shim(
+    name = "contract is notrump",
+    expression = "state.contract.strain == game.strain.notrump",
+)
+
+shim(
+    name = "contract makes",
+    expression = "state.tricks_taken[state.declarer.side] >= game.book + state.contract.level",
+)
+    
+simulation(
+    name = "can 1nt make?",
+    precondition = value("contract is notrump"),
+    postcondition = value("contract makes"),
+    summary = "any",
+    game = "card play",
+    exhaustive = True,
+)
+
+assertion(
+    name = "1nt fails",
+    statement = "1nt never makes",
+    reason = """
+	     Simulation of the card play of a random deal after 1nt - all pass
+	     reveals that the card led wins the trick.
+	     By [seat symmetry], [suit symmetry], and [trick dependencies],
+	     it suffices to consider only one opening leader, card layout,
+	     and auction, board number, and double/redouble.
+	     """,
+    check=assertFalse(value("can 1nt make"))
+)
+
+assertion(
+    name="1x outcomes",
+    statement="1suit makes iff we have the ace of that suit",
+    deps=[
+	"seat symmetry",
+	"suit symmetry",
+	"trick dependencies",
+    ],
+)
+
+assertion(
+    name="safe doubles",
+    statement="It is safe to: double 1NT; and double 1x when holding the trump Ace",
+    deps=[
+	"1nt fails",
+	"1x outcomes",
+    ],
+)
+
+assertion(
+    name="mandatory doubles",
+    statement="When opponents are non-vulerable, it is useful to double 1NT and 1S when holding SA",
+    deps=[
+	"1nt fails",
+	"1x outcomes",
+    ],
+)
+
+strategy(
+    name="bid spades or double with trump",
+    build="""
+    Prefer([
+        If(
+            Plane(
+                Index(state.length, actor.seat, game.suit.spade),
+                Geq(1),
+            ),
+            Prefer([
+                Index(action.bidding.bid, game.suit.spade),
+                action.bidding.double,
+            ]),
+        ),
+        action.bidding.pass,
+    ])
+    """,
+)
+    
+assertion(
+    name="algorithm optimal",
+    statement="[bid spades or double with trump] is an equilibrium strategy",
+    proof="""
+    It is [straightforward and practical](TODO) to enumerate
+    the reachable part of the game tree,
+    evaluating alternative strategies,
+    and determining that there is no incentive for any player to change.
+
+    Checking that there is no incentive for coordinated partnership change
+    is [similar](TODO) (albeit more complicated).
+    """,
+)

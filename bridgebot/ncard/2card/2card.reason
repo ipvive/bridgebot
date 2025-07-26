@@ -1,0 +1,130 @@
+# NOTES:
+# 
+#    * candidate: bid with two trump, pass otherwise.
+#    * bid with AA?
+#    * Is it still an equilibrium with agreements?
+#      * 1c shows any AA?
+#      * 1c shows AC,A?
+#      * 1c shows AC,A if NV?
+# 
+#  * note: book is floor(n/2) = 1, so need both tricks to make 1-level contract
+#  * lv guess: 1c shows spade ace.
+#  * njt guess: 1 level much riskier in 2card.
+# 
+# ### play analysis
+# 1NT result:
+#  * -1 or -2 if OL has an ace
+#  * = if defenders have no aces
+#  * = if K->AA hand
+#  * = if K->A, K->A
+#  * = if RHO is pseudosqueezed:
+#    * one position /~ suit permutation, seat rotation: ```
+#         N: SA HK
+#    W: SK CK  E: CA DA
+#         S: HA DK
+#    ```
+#  * down otherwise
+#  * njt: AAAA + change
+# 1suit result:
+#  * = if declarer controls both trump
+#  * = if Kx - Ax - (KTrump?) - (ATrump?) AND declarer and dummy have another ace.
+#    * unlikely...
+#  * down otherwise
+# 
+# context(
+#     defacto meaning is 1x shows x:AK"
+# )
+# 
+# proposition(
+#     statement=P(we have AAAA)|(I have AA) = 1/(6 choose 2) = 1/15
+# )
+# 
+# conjecture(
+#     statement="if we are vul, no form of big club has positive utility")
+# )
+# 
+# conjecture(
+#     statement="""
+# when we are nonvul:
+#     1c=Any AA
+#       1c-(P)-?:
+#         1NT = any AA
+#         1x  = 2-card suit
+#         P   = other, after which:
+#           P if undoubled
+#           bid up line
+# ... has positive utility 
+# """
+# )
+# 
+# proposition(P(we have a 2-card suit) = # = 8!/ (2!)^4
+#   P = (4 * ((6 choose 2)) + 4 * ((6 choose 2) - 3)) / #
+#    = 108 / 2520 ~ 4%
+#    )
+# proposition(P(we have a 2-card fit) = 1 - 2^4 / #; # = 8! / 2^4; P =~ 96%
+#  P = num(1111) (SA?)^4 * (4 choose 2)
+#    = 96 / 2520 ~ 4%
+#
+assertion("about 88% of the time, both sides have 1 or 2 1-1 fits and no 2-0 fits.")
+# 
+# ---
+#  * guess: an optimal set of agreements is:
+#    * opening bids and responses
+#      * 1C = (long diamonds) OR (both majors)
+#        * 1C-P = long clubs
+#        * 1C-1D other hands
+#        * 1C-1M = long M
+#      * 1D = D + (H or S)
+#        * 1D-P = diamond or clubs
+#        * 1D-1S = 1-2 S, no H
+#        * 1D-1H = 1-2 H, maybe 1 S
+#      * 1M = long M
+#    * defense
+#      * (P)-? (as above)
+#      * (1C)-?
+#        * 1S = spades
+#        * X = majors?
+#        * case 1: (1/5)opener has DAK, (4/15)overcaller has H+S
+#        * case 2: (1/5)opener has DAK, (4/15)overcaller has Cx + Sx
+#        * case 3: (1/5)opener has DAK, (4/15)overcaller has Cx + Hx
+#        * case 4: (4/5)opener has H+S, (9/15)overcaller has 1-2 D
+#        * case 5: (4/5)opener has H+S, (1/15)overcaller has HA+SA
+#      
+assertion(
+    "in 1st position: impact of 1D is ~??%, plus score is ~??%",
+    "P(occurs) = P(dealt 1-1) * P(D+M | 1-1) =~ 98% * (2 / (4 choose 2))
+    "P(plus) = SAK + Dx + matching single major + EITHER(HAK + Hx, majors && M=S)
+        = (1 + 5 + 1 + 2) / 15 = 9/15 ~ 60%
+    "utility 98% * 1/3 * 1/10 =~ 3%
+)
+P(pd has majors | I have S+D) = 2/(6 choose 2)
+P(pd has HAK | I have S+D) = 1/(6 choose 2)
+
+assertion(
+    "in 1st position: impact, plus %, utility of 1D showing HA + SA",
+    "P(occurs) = P(dealt AA) * P(both M|AA) =~ 98% / 4 / 6 ~ 1/24",
+    "P(plus) = DAK + HK + SK - (HK && SK) + AA = (1 + 5 + 5 - 1 + 1)/15 =~ 87%",
+    "utility = 1/24 * 10/30 = 1/72"
+)
+aassertion(
+    statement="it is safe to double 1x for penalty holdinng 1-2 trump")
+)
+assertion(
+    "P(pd has AA | I have AA) = 1 / ((6 choose 2) = 1/15"
+)
+assertion(
+    "1nt is at best 50% unless OL is known to have 2 specific kings OR" + \
+    "we havs AAAA")
+assertion(
+    "card rank is rarely relevant in determining contract makes"
+    "only relavant deals" =
+        "AAAA combined",
+        "AAAK when OL guesses wrong",
+        "(trump)A + AK (1-1) + A(dummy) when OL guesses wrong"
+)
+ assertion(
+    statement="bidding in 2-card bridge is dominated by the quest to reach 1-1 fits"
+)
+assertion(
+    name="2card bidding too complex to merit exhaustive manual analysis")
+

@@ -1,0 +1,76 @@
+game(
+    name="ncard",
+    metaparams=["n"],
+    subgames=[
+	"deal",
+	"bidding",
+	"card play",
+	"trick",
+	"scoring"
+    ],
+    implementation='bridge.fastgame'
+)
+
+game(
+    context="ncard",
+    name="deal",
+    players=["chance"],
+    inputs=[],
+    outputs=["dealt_cards"]
+)
+
+game(
+    context="ncard",
+    name="card play",
+    players="[seats]",
+    inputs=["dealt_cards", "contract"],
+    implementation=sequence(["trick"] * n),
+    outputs=["tricks_taken_by_side"],
+)
+
+game(
+    name="1card",
+    implementation="ncard(n=1)",
+)
+
+# TODO: merge
+game(
+    name="duplicate contract bridge",
+    instanceof="n-card bridge",
+    params={"n": 13},
+)
+
+game(
+    name="n-card bridge",
+    inherits="duplicate contract bridge",
+    meta=["n"],
+    abridges=[
+        "book",
+        "card/rank",
+        "contract/level",
+    ],
+)
+
+game(
+    name="1card",
+    instanceof="n-card bridge",
+    params={"n": 1},
+)
+
+context("n-card bridge")
+axiom(
+    name="seat symmetry",
+    statement="The game is symmetric with respect to seat rotation."
+)
+
+axiom(
+    name="trick dependencies",
+    statement="The winner of each trick is depends only on contract strain and cards played to that trick.",
+)
+
+proposition(
+    name="suit symmetry",
+    statement="Card play is symmetric with respect to suit permutation.",
+    dependencies=["trick dependencies"],
+)
+

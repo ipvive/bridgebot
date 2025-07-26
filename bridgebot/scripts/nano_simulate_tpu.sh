@@ -1,0 +1,11 @@
+python app.py \
+	--debug \
+	--run_simulate \
+	--model_dir=gs://njt-serene-epsilon/models/rl-tpu-nano \
+	--bridgebot_config_file=bridgebot_config_nano.json \
+	--num_parallel_simulations=2048 \
+	--num_parallel_inferences=1 \
+	--num_simulations_per_move=1 \
+	--simulation_batch_size=1 \
+	--use_tpu --tpu_name=selfplay \
+	--new_boards_prefix=./data/nano_boards/boards

@@ -1,0 +1,10 @@
+WIKIID=enwiki-20171020
+python x/wikimedia/getarticles.py $WIKIID | xargs xargs -n1 wget -b
+mkdir -p $WIKIID genfiles/$WIKIID
+mv $WIKIID-* $WIKIID
+find $WIKIID -name '*pages-articles*.bz2' | xargs -n1 -P50 bunzip2
+find $WIKIID -name '*pages-articles*' | xargs -n1 -P50 -I{} sh -c 'egrep --byte-offset "^(  <page>|    <id>|    <title>)" "$1" > "genfiles/$1.pageix"' -- {}
+find $WIKIID -name '*pages-articles*' | xargs -n1 -P50 -I{} sh -c 'egrep --only-matching "(^    <id>.*|\[\[[^]]*\]\])" "$1" > "genfiles/$1.anchors"' -- {}
+find genfiles -name '*.anchors' | sed 's/.anchors//' | xargs -n1 -P50 -I{} sh -c 'perl -f lrl.pl "$1.anchors" > "$1.lrl"' -- {}
+find genfiles/* -type d | xargs -n1 -P5 -I{} sh -c 'sort -k2,99 -T/mnt/xvdf/tmp --parallel=18 "$1"/*.lrl > "$1/combined-lrl"' -- {}
+find genfiles -name '*-search.txt' | sed 's/-search.txt//' | xargs -n1 -P5 -I{} sh -c 'sort -k2,99 "$1-search.txt" > "$1-titles-sorted.txt"' -- {}

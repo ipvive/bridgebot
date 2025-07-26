@@ -1,0 +1,14 @@
+s/tf.get_variable/tf.compat.v1.get_variable/
+s/tf.variable_scope/tf.compat.v1.variable_scope/
+s/tf.parse_single_example/tf.io.parse_single_example/
+s/tf.FixedLenFeature/tf.io.FixedLenFeature/
+s/tf.gfile/tf.io.gfile/
+s/tf.logging/tf.compat.v1.logging/
+s/tf.placeholder/tf.compat.v1.placeholder/
+s/tf.assert_less_equal/tf.compat.v1.assert_less_equal/
+s/tf.truncated_normal_initializer/tf.compat.v1.truncated_normal_initializer/
+s/tf.layers/tf.compat.v1.layers/
+s/tf.trainable_variables/tf.compat.v1.trainable_variables/
+s/tf.train.get_or_create_global_step/tf.compat.v1.train.get_or_create_global_step/
+s/tf.train.polynomial_decay/tf.compat.v1.train.polynomial_decay/
+s/tf.train.Optimizer/tf.compat.v1.train.Optimizer/

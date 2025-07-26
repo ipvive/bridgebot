@@ -1,0 +1,10 @@
+apache-beam[gcp]
+grpcio
+six
+tensorflow
+tensorflow-datasets
+absl-py
+cloud-tpu-client
+google-cloud-bigtable
+gsutil
+python-snappy

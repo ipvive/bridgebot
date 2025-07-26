@@ -1,0 +1,83 @@
+# normal
+ctpu up -name sl-normal -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=mubert_config.json --model_dir=gs://njt-serene-epsilon/models/normal.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-normal --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=32
+while true; do python3 app.py --mubert_config_file=mubert_config.json --model_dir=gs://njt-serene-epsilon/models/normal.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/normal.0
+ctpu rm -name sl-normal -noconf
+
+# small-short-dyn
+ctpu up -name sl-small-short-dyn -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-short-dyn.json --model_dir=gs://njt-serene-epsilon/models/small-short-dyn.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-short-dyn --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=256
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-short-dyn.json --model_dir=gs://njt-serene-epsilon/models/small-short-dyn.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-short-dyn.0
+ctpu rm -name sl-small-short-dyn -noconf
+
+# small-short-pred
+ctpu up -name sl-small-short-pred -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-short-pred.json --model_dir=gs://njt-serene-epsilon/models/small-short-pred.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-short-pred --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=256
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-short-pred.json --model_dir=gs://njt-serene-epsilon/models/small-short-pred.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-short-pred.0
+ctpu rm -name sl-small-short-pred -noconf
+
+# small-short-rep
+ctpu up -name sl-small-short-rep -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-short-rep.json --model_dir=gs://njt-serene-epsilon/models/small-short-rep.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-short-rep --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=256
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-short-rep.json --model_dir=gs://njt-serene-epsilon/models/small-short-rep.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-short-rep.0
+ctpu rm -name sl-small-short-rep -noconf
+
+# small-tall-dyn
+ctpu up -name sl-small-tall-dyn -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-tall-dyn.json --model_dir=gs://njt-serene-epsilon/models/small-tall-dyn.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-tall-dyn --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=256
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-tall-dyn.json --model_dir=gs://njt-serene-epsilon/models/small-tall-dyn.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-tall-dyn.0
+ctpu rm -name sl-small-tall-dyn -noconf
+
+# small-tall-pred
+ctpu up -name sl-small-tall-pred -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-tall-pred.json --model_dir=gs://njt-serene-epsilon/models/small-tall-pred.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-tall-pred --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=128
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-tall-pred.json --model_dir=gs://njt-serene-epsilon/models/small-tall-pred.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-tall-pred.0
+ctpu rm -name sl-small-tall-pred -noconf
+
+# small-tall-rep
+ctpu up -name sl-small-tall-rep -preemptible -noconf -forward-ports=false -tf-version=2.1 -machine-type=n1-highmem-4
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git clone git@github.com:ipvive/bridgebot.git
+cd bridgebot
+git checkout training-runs
+pip3 install -r requirements.txt
+python3 app.py --mubert_config_file=config/mubert-config-small-tall-rep.json --model_dir=gs://njt-serene-epsilon/models/small-tall-rep.0 --do_train --learn_supervised=true --use_tpu=true --tpu_name=sl-small-tall-rep --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset --num_train_steps=500000 --train_batch_size=256
+while true; do python3 app.py --mubert_config_file=config/mubert-config-small-tall-rep.json --model_dir=gs://njt-serene-epsilon/models/small-tall-rep.0 --do_eval --learn_supervised=true --gcp_zone=us-central1-b --supervised_dataset_location=gs://njt-serene-epsilon/sl-dataset; done
+tensorboard --logdir=gs://njt-serene-epsilon/models/small-tall-rep.0
+ctpu rm -name sl-small-tall-rep -noconf

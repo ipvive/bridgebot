@@ -1,0 +1,105 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+load("@pip_deps//:requirements.bzl", "requirement")
+
+py_binary(
+    name = "simulate",
+    srcs = ["simulate.py"],
+    deps = [
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/pb:alphabridge_python_proto",
+	"//bridgebot/bridge/fastgame:fastgame",
+        "//bridgebot/bridge:tokens",
+        requirement("grpcio"),
+        requirement("absl-py"),
+        requirement("numpy"),
+        requirement("google-cloud"),
+        requirement("google-cloud-bigtable"),
+    ],
+    visibility = ["//visibility:public"],
+)
+py_binary(
+    name = "evaluate",
+    srcs = ["evaluate.py", "simulate.py"],
+    deps = [
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/bridge:game",
+        "//bridgebot/bridge:tokens",
+        requirement("grpcio"),
+        requirement("absl-py"),
+        requirement("numpy"),
+        requirement("google-cloud-bigtable"),
+    ],
+    visibility = ["//visibility:public"],
+)
+
+py_library(
+    name = "inference_lib",
+    srcs = ["inference.py"],
+    deps = [
+        requirement("tensorflow"),
+        "//bridgebot/bridge:game",
+        "//bridgebot/bridge:tokens",
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/pb:alphabridge_python_proto",
+        "//bridgebot/mubert:mubert",
+        ":tpudata",
+    ],
+)
+
+py_binary(
+    name = "inference",
+    srcs = ["inference.py"],
+    deps = [
+        ":inference_lib",
+        requirement("tensorflow"),
+        requirement("cloud-tpu-client"),
+    ],
+    data = [":config"],
+    visibility = ["//visibility:public"],
+)
+    
+filegroup(
+    name = "testdata",
+    srcs = glob(["testdata/**/*"]),
+)
+
+
+py_test(
+    name = "inference_test",
+    srcs = ["inference_test.py"],
+    deps = [
+        "//bridgebot/pb:alphabridge_python_proto",
+        "//bridgebot/bridge:game",
+        "//bridgebot/bridge:tokens",
+        ":inference_lib",
+    ],
+    data = [
+        ":testdata",
+    ],
+)
+
+filegroup(
+    name = "config",
+    srcs = glob(["config/**/*.json"]),
+)
+
+py_library(
+    name = "train",
+    srcs = ["train.py"],
+    deps = [
+        requirement("tensorflow"),
+        requirement("tensorflow-datasets"),
+        requirement("apache-beam"),
+        "//bridgebot/bridge:tokens",
+        "//bridgebot/bridge:game",
+        "//bridgebot/mubert:mubert",
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/training_pipeline:training_pipeline",
+        ":tpudata",
+    ],
+)
+
+py_library(
+    name = "tpudata",
+    srcs = ["tpudata.py"],
+)

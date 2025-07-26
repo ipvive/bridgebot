@@ -1,0 +1,38 @@
+digraph manifest {
+njt;
+
+subgraph userfiles {
+uf1 [label="bravesearch_out.html"];
+uf2 [label="CAS.md"];
+uf3 [label="dolog.md"];
+uf4 [label="explore.ipynb"];
+uf5 [label="learningloops.md"];
+uf6 [label="REAMDE.md"];
+uf7 [label="YAGNI.md"];
+}
+
+subgraph flow {
+//edge [label="principal salient link"];
+g1 [label="connect steps noted earlier"];
+g1 -> {monday; userfiles; andrew; goal; njt; cayley; cyclic; search; gam};
+g2 [label="quote steps defined here in flow and as specified in g1"];
+m2.1 [label="note: md >> dot for src"];
+m2.2 [label="avoid direct editing of result"];
+m2.3 [label="don't peek"];
+m2.4 [label="follow my engineering process"];
+m2_4_1 [label="use clunky proxies"];
+g1 -> g2;
+g2 -> {m2.1;m2.2;m2.3;m2.4};
+m2.4 -> m2_4_1;
+result [label="file renders, but not as intended"];
+g2 -> result;
+q1 [label="https://search.brave.com/search?q=graphviz+label&source=desktop"];
+result -> q1;
+result2 [label="file renders mostly as intended, but not as desired (subgraphs not shown)"];
+q1 -> result2;
+reason_1 [label="TMI"];
+reason_2 [label="subgraph grouping not visible"];
+reason_3 [label="node names not used"];
+result2 -> {reason_1;reason_2;reason_3;};
+}
+}

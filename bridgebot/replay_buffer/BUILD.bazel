@@ -1,0 +1,27 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "replay_buffer_lib",
+    srcs = ["replay_buffer.go"],
+    importpath = "ipvive/bridgebot/replay_buffer",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//bridgebot/pb",
+        "@com_github_apache_beam_sdks_v2//go/pkg/beam/io/filesystem:go_default_library",
+        "@com_github_apache_beam_sdks_v2//go/pkg/beam/io/filesystem/gcs:go_default_library",
+        "@com_github_apache_beam_sdks_v2//go/pkg/beam/io/filesystem/local:go_default_library",
+        "@com_github_golang_protobuf//proto:go_default_library",
+        "@com_github_ryszard_tfutils//go/tfrecord",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//credentials",
+        "@org_golang_google_grpc//reflection",
+        "@org_golang_x_exp//rand",
+        "@org_gonum_v1_gonum//stat/sampleuv",
+    ],
+)
+
+go_binary(
+    name = "replay_buffer",
+    embed = [":replay_buffer_lib"],
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,63 @@
+# finds all nodes that are distance 1 from paths though
+# categories that lead to Category:Contract bridge
+match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+with collect(n) as nodes
+match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (n1:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+  where n1.title starts with 'Category:'
+with collect(n) + nodes as nodes
+match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (n1:Page)
+  -[:Link]-> (n2:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+  where n1.title starts with 'Category:'
+  and n2.title starts with 'Category:'
+with collect(n) + nodes as nodes
+match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (n1:Page)
+  -[:Link]-> (n2:Page)
+  -[:Link]-> (n3:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+  where n1.title starts with 'Category:'
+  and n2.title starts with 'Category:'
+  and n3.title starts with 'Category:'
+with collect(n) + nodes as nodes
+match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (n1:Page)
+  -[:Link]-> (n2:Page)
+  -[:Link]-> (n3:Page)
+  -[:Link]-> (n4:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+  where n1.title starts with 'Category:'
+  and n2.title starts with 'Category:'
+  and n3.title starts with 'Category:'
+  and n4.title starts with 'Category:'
+with collect(n) + nodes as nodes
+match (n:Page)
+  match (n:Page)
+  -[:Link*0..1]- (n0:Page)
+  -[:Link]-> (n1:Page)
+  -[:Link]-> (n2:Page)
+  -[:Link]-> (n3:Page)
+  -[:Link]-> (n4:Page)
+  -[:Link]-> (n5:Page)
+  -[:Link]-> (b:Page {title:'Category:Contract bridge'})
+  where n1.title starts with 'Category:'
+  and n2.title starts with 'Category:'
+  and n3.title starts with 'Category:'
+  and n4.title starts with 'Category:'
+  and n5.title starts with 'Category:'
+with collect(n) + nodes as nodes
+unwind nodes as n
+with collect(distinct n) as nodes
+call apoc.algo.cover(nodes) yield rel
+with nodes as nodes, collect(rel) as rels
+call apoc.export.graphml.data(nodes, rels, 'bridge_full_nbd_one.graphml',{}) yield file
+return file

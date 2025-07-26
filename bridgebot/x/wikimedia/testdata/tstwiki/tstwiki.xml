@@ -1,0 +1,14 @@
+  <page>
+    <title>hello</title>
+    <revision>
+      <text xml:space="preserve">[[world]]</text>
+    </revision>
+  </page>
+
+  <page>
+    <title>world</title>
+    <revision>
+      <text xml:space="preserve">[[hello]] [[howdy]]</text>
+    </revision>
+  </page>
+</mediawiki>

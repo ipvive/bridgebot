@@ -1,0 +1,128 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_binary", "py_test")
+load("@pip_deps//:requirements.bzl", "requirement")
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+py_library(
+    name = "game",
+    srcs = ["game.py"],
+    deps = ["//bridgebot/bridge/fastgame:fastgame"],
+)
+
+py_test(
+	name = "game_test",
+	srcs = ["game_test.py"],
+	deps = [":game"],
+)
+
+py_binary(
+    name = "simulate",
+    srcs = ["simulate.py"],
+    deps = [
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/pb:alphabridge_python_proto",
+	":game",
+	":chords",
+        requirement("grpcio"),
+        requirement("absl-py"),
+        requirement("numpy"),
+        requirement("google-cloud"),
+    ],
+    visibility = ["//visibility:public"],
+)
+
+py_library(
+	name = 'chords_lib',
+	srcs = ['chords.py'],
+)
+
+py_binary(
+	name = 'chords',
+	srcs = ['chords.py'],
+	deps = [
+		":chords_lib",
+		":game"
+	]
+)
+
+py_test(
+	name = "chords_test",
+	srcs = ["chords_test.py"],
+	deps = [
+		":chords_lib",
+		":game"
+	]
+)
+
+py_library(
+    name = "inference_lib",
+    srcs = ["inference.py"],
+    deps = [
+        requirement("tensorflow"),
+        ":game",
+        ":model",
+        ":experiment",
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/pb:alphabridge_python_proto",
+    ],
+    data=[":config"],
+)
+
+py_binary(
+    name = "inference",
+    srcs = ["inference.py"],
+    deps = [
+        ":inference_lib",
+    ],
+)
+    
+py_library(
+	name = "model",
+	srcs = ["model.py"],
+	deps = [
+		requirement("jax"),
+		"//third_party/perceiver:perceiver",
+		"//third_party/perceiver/train:train",
+		":chords",
+	],
+)
+
+filegroup(
+	name = "config",
+	srcs = glob(["config/*"]),
+)
+
+py_library(
+    name = "training_pipeline",
+    srcs = [
+	"training_pipeline.py",
+    ],
+    deps = [
+        "//bridgebot/pb:alphabridge_python_grpc",
+        "//bridgebot/pb:alphabridge_python_proto",
+        requirement("tensorflow"),
+        requirement("tensorflow-datasets"),
+        requirement("apache-beam"),
+    ],
+)
+
+py_binary(
+	name = "experiment",
+	srcs = ["experiment.py"],
+	deps = [
+		requirement("jax"),
+		requirement("dm_haiku"),
+		requirement("jaxline"),
+		requirement("absl-py"),
+		requirement("ml_collections"),
+		requirement("optax"),
+		requirement("flax"),
+		requirement("numpy"),
+		requirement("python-snappy"),
+        	"//bridgebot/ncard:game",
+		":training_pipeline",
+		":model",
+	],
+	data = [":config"],
+)

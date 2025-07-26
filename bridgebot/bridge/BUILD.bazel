@@ -1,0 +1,29 @@
+load("@rules_python//python:defs.bzl", "py_library")
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+py_library(
+    name = "players",
+    srcs = ["players.py"],
+)
+
+py_library(
+    name = "tokens",
+    srcs = ["tokens.py"],
+    deps = [":game"]
+)
+
+py_library(
+    name = "lin",
+    srcs = ["lin.py"],
+)
+
+py_library(
+    name = "game",
+    srcs = ["game.py"],
+    deps = [
+	":players",
+	"//bridgebot/pb:alphabridge_python_proto",
+    ],
+)

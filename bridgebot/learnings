@@ -1,0 +1,38 @@
+* autocode:
+  * LLM are unwieldy with only CPU.
+* dopamine:
+  * there is not much utilit in deconnstructing poor quality models.
+  * it is easy to get distracted by evident properties of the input.
+* bridge dims
+  * code no longr works.
+    * apparent OOM in execution of jax compiled update fn.
+---
+posssible futures:
+  * construct + use lens with human guidance.
+    * need a comprehensible KG.
+      * ? construct introspection KG concerning state of demo.
+      * ? adopt an existing topical KG of modest size.
+        * ? wikipedia category.
+      * ? bridge example
+        * requires domain expertise to comprehend
+      * ? COBOL example:
+        * https://github.com/seshu1999/STUDENT-LOAN-DETAILS is solely docx files.
+    * to form lenses:
+      * identify a pattern
+      * ...
+    * use the lenses to inform decision(s).
+---
+cobol2rust
+* understand the target language and available libraries ("crates")
+  * iteratively expand a KG correlating:
+    * language features
+    * crate functionality
+    * design patterns.
+  * summarize tha KG with decision-tree lenses isolating
+    relevant knowledge for a given source construct
+  * train neural nets to recognize answers to space-dividing questions.
+    * in particular:
+      * does this source fragment duplicate available functionality?
+      * ...
+
+   

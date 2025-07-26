@@ -1,0 +1,6 @@
+graph indexer batch mode
+  cp wikis tmp/mounts  # en enwiki-20171020
+  cp startixs tmp/vocab  # (mountix, pageid)
+  
+
+starting backend - extract anchors, extract interwiki:title

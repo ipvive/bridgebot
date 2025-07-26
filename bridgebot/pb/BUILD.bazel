@@ -1,0 +1,48 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto_grpc//python:defs.bzl", "python_proto_compile")
+load("@rules_proto_grpc//python:defs.bzl", "python_grpc_compile")
+load("@pip_deps//:requirements.bzl", "requirement")
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+proto_library(
+    name = "alphabridge_proto",
+    srcs = ["alphabridge.proto"],
+)
+
+go_proto_library(
+    name = "alphabridge_go_proto",
+    compilers = ["@io_bazel_rules_go//proto:go_grpc"],
+    importpath = "ipvive/bridgebot/pb",
+    proto = ":alphabridge_proto",
+)
+
+py_library(
+    name = "alphabridge_python_proto",
+    srcs = ["alphabridge_pb2.py"],
+    deps = [requirement("protobuf")],
+)
+
+py_library(
+    name = "alphabridge_python_grpc",
+    srcs = ["alphabridge_pb2_grpc.py"],
+    deps = [
+		    requirement("grpcio"),
+		    ":alphabridge_python_proto",
+		    ],
+)
+
+python_grpc_compile(
+		name = "alphabridge_python_proto_compile",
+		protos = [":alphabridge_proto"],
+)
+
+go_library(
+    name = "pb",
+    embed = [":alphabridge_go_proto"],
+    importpath = "ipvive/bridgebot/pb",
+    visibility = ["//visibility:public"],
+)

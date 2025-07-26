@@ -1,0 +1,63 @@
+excavate the original cycle spider
+
+ INPUT ([]seed_url, []goal_url)
+
+ -{urldecode}-> (lrl, url, []ix) :GOAL-UNINDEXED
+
+ STRANGELOOP
+
+   -{(re)index}->(ix, isnew, []ix) :INDEX
+
+   -{if ix in :GOAL}-> :BACKTRACK_AND_EMIT
+   -{if not isnew}-> continue
+
+   -{fetch}-> (ix, data)
+   -{RE2}-> (ix, []lrl)
+
+   -{prioritize}-> (lrl, []ix) :XSSORT
+
+   -{urlencode}-> (lrl, url, []ix)
+
+
+:BACKTRACK_AND_EMIT  # two-end index-only search
+
+index-state -> smallint-csr.{crdb,sst} + smallint-csc.{crdb,sst} + smallint-to-loc.sst + smallint-to-lrl.sst + lrl-vocab.txt
+
+repechage
+<> indices will be different.
+<> associations: 
+  backward
+    url -{urldecode}-> lrl -{:XSSORT-xqueue}-> []unprocessed_backlink
+  + forward
+    url -{:INDEX-graph} (ix, []ix) -{:INDEX-title}-> (url, []url)
+    
+  (ix, []lrl)
+
+
+xgraph
+======
+
+MANIFEST
+
+driver
+
+scipy.sparse.csgraph stuff
+  * gets matrix from csc.sst and/or csr.sst
+  * surfaces cycles.
+
+low-volume, low-latency index/deindex
+  * url -> index via 'grep $(sed "s#.*/##;s/_/ /g") */*search.txt'
+  * index -> lrl via vocab.sst
+
+graph-indexer stuff
+  produces csc.sst, csr.sst
+  produces vocab.sst
+      TBR: is it one-level or via title.sst using (wikidumpid, pageid)?
+  requires wikidumpid/pageid.sst
+
+?pageix2tables.cc extension?
+  produces pageid.sst (title->pageid)
+
+done stuff
+  * getarticles.py prints database dump download urls.
+  * pageix2tables.cc produces loc.sst, title.sst, search.txt
