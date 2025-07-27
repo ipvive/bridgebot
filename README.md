@@ -47,7 +47,7 @@ cd ../../../..
 # Install the main package in editable mode
 pip install -e .
 How to Run the Simulation
-The best way to verify that the core components are working is to run the backend servers and the main simulation script. This requires three separate terminal windows.
+The best way to verify that the core components are working is to run the backend servers and the main simulation script. This requires four separate terminal windows.
 
 Terminal 1: Start the Replay Buffer Server
 
@@ -56,13 +56,19 @@ Bash
 # From the project root, run the replay buffer with Bazel
 mkdir -p /tmp/replay_buffer
 bazel run //bridgebot/replay_buffer -- --data_directory=/tmp/replay_buffer
-Terminal 2: Start the Fake Simulator Server
+Terminal 2: Start the Inference Pipe Server
 
 Bash
 
-# From the project root, run the fakesim server with Bazel
-bazel run //bridgebot/inference_pipe/fakesim
-Terminal 3: Run the Python Simulation Client
+# From the project root, run the inference pipe server with Bazel
+bazel run //bridgebot/inference_pipe
+Terminal 3: Run the Fake Inference Client
+
+Bash
+
+# From the project root, run the fake inference client with Bazel
+bazel run //bridgebot/inference_pipe/fakeinfer
+Terminal 4: Run the Python Simulation Client
 
 Bash
 
