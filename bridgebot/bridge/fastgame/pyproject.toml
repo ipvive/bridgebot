@@ -1,0 +1,8 @@
+# src/bridgebot/bridge/fastgame/pyproject.toml
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "numpy"
+]
+build-backend = "setuptools.build_meta"

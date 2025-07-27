@@ -3,22 +3,12 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# Define the source and output directory.
-# This assumes the script is run from the root of the 'bridgebot' project.
-PROTOS_DIR=./pb
-PYTHON_OUT_DIR=./pb
+PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 && pwd )"
 
-# Ensure the output directory exists.
-mkdir -p ${PYTHON_OUT_DIR}
-
-echo "Generating Python and gRPC code..."
-
-# Generate Python code for all .proto files
-# This uses the grpcio-tools package which includes protoc and the necessary plugins.
+# Run protoc from the project root
 python3 -m grpc_tools.protoc \
-    -I${PROTOS_DIR} \
-    --python_out=${PYTHON_OUT_DIR} \
-    --grpc_python_out=${PYTHON_OUT_DIR} \
-    ${PROTOS_DIR}/alphabridge.proto
+  --proto_path="$PROJECT_ROOT" \
+  --python_out="$PROJECT_ROOT" \
+  --grpc_python_out="$PROJECT_ROOT" \
+  "bridgebot/pb/alphabridge.proto"
 
-echo "Protobuf generation complete."

@@ -1,0 +1,7 @@
+fastgame.c
+pyproject.toml
+setup.py
+fastgame.egg-info/PKG-INFO
+fastgame.egg-info/SOURCES.txt
+fastgame.egg-info/dependency_links.txt
+fastgame.egg-info/top_level.txt

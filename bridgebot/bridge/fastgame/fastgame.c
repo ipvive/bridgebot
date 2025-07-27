@@ -371,7 +371,7 @@ static PyMethodDef fastgamemethods[] = {
 
 static struct PyModuleDef fastgamemoduledef = {
   PyModuleDef_HEAD_INIT,
-  "fastgame",
+  "_fastgame",
   NULL,
   -1,
   fastgamemethods,
@@ -382,7 +382,7 @@ static struct PyModuleDef fastgamemoduledef = {
 };
 
 PyMODINIT_FUNC
-PyInit_fastgame() {
+PyInit__fastgame() {
 	PyObject *m = NULL;
 	if (STATE_SIZE != 330) {
 		printf("GameState has size %ld, but need 330", STATE_SIZE);

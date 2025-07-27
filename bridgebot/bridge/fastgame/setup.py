@@ -1,11 +1,18 @@
-from distutils.core import setup, Extension
-import numpy as np
-
-ext_modules = [ Extension("_fastgame", sources = ["fastgame.c"]) ]
+# src/bridgebot/bridge/fastgame/setup.py
+from setuptools import setup, Extension
+import numpy
 
 setup(
-        name = "_fastgame",
-        version = "1.0",
-        include_dirs = [np.get_include()],
-        ext_modules = ext_modules
+    name="fastgame",
+    version="1.0",
+    description="The fastgame C extension",
+    # This provides the C compiler with the necessary numpy headers
+    include_dirs=[numpy.get_include()],
+    ext_modules=[
+        Extension(
+            # The compiled module will be a top-level one named _fastgame
+            "_fastgame",
+            sources=["fastgame.c"],
+        )
+    ],
 )
