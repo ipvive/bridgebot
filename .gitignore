@@ -1,3 +1,7 @@
 .venv
 __pycache__
 poetry.lock
+bazel-bin
+bazel-bridgebot
+bazel-out
+bazel-testlogs

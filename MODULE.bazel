@@ -1,0 +1,27 @@
+# MODULE.bazel
+
+module(name = "bridgebot")
+
+# --- Core Bazel Dependencies ---
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "rules_python", version = "0.40.0")
+# Updated rules_go to a more recent version
+bazel_dep(name = "rules_go", version = "0.55.1") 
+# Updated bazel_gazelle to a valid, recent version
+bazel_dep(name = "gazelle", version = "0.44.0", repo_name = "gazelle")
+# Updated rules_proto to a more recent version
+bazel_dep(name = "rules_proto", version = "7.1.0") 
+
+# --- Python Toolchain Setup ---
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    is_default = True,
+    python_version = "3.12" 
+)
+
+# --- Go Toolchain Setup ---
+go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
+go_sdk.download(version = "1.22.5") 
+
+go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
+go_deps.from_file(go_mod = "//:go.mod")
